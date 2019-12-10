@@ -5,22 +5,24 @@
 ## Fetching comparison
 - underfetch
 - overfetch
+- nested resolvers
 
 ## Multiple endpoints vs one data graph
 - federation
 
 ## Type system
+- introspection
 - optional fields in a mutation
 - skipping mandatory fields
 - renaming field on the server
 - returning something else than the contract specified
 - enums 
 
-## Type system
+## GraphQL type system
 - prevents you from doing mistakes - returning something else than what the schema specifies
 - tooling (e.g. GraphiQL, IDE plugins)
 
-## Schema design
+## FraphQL schema design
 - schema first design allow frontend and backend to agree on what needs to done and proceed in parallel
 
 ## Error handling
@@ -28,5 +30,5 @@
 
 ## Others
 - caching becomes more complex 
-
+- language support
 
