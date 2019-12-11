@@ -6,7 +6,7 @@
 - end goals on whiteboard
     - know what GraphQL is
     - know when to use it
-    - know where to find more information 
+    - know where to find more
 - questions welcome
 ## What is GraphQL?
 - query language for APIs
