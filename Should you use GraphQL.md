@@ -60,8 +60,10 @@
     - good tools and libraries especially for Node.js (Apollo)
 
 ## References
-https://www.howtographql.com/react-apollo - client side tutorial for React
-https://www.howtographql.com/graphql-js - server side tutorial for Node.js
-https://medium.com/@purposenigeria/build-a-restful-api-with-node-js-and-express-js-d7e59c7a3dfb - Build a simple REST API with Node.js
+- https://www.howtographql.com/react-apollo - client side tutorial for React
+- https://www.howtographql.com/graphql-js - server side tutorial for Node.js
+- https://medium.com/@purposenigeria/build-a-restful-api-with-node-js-and-express-js-d7e59c7a3dfb - Build a simple REST API with Node.js
+- https://github.com/mirceaned/rest-example
+- https://github.com/mirceaned/graphql-example
 
 
