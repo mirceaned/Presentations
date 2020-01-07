@@ -13,11 +13,11 @@
 - Cloud Development Kit
 - framework for defining cloud infrastructure and provisioning
 - uses constructs
-- has tools for synth, diff and deploy
+- suite of tools for synth, diff and deploy
 - imperative
 
 ## Example
-- number of lines comparison (115 vs 18)
+- number of lines comparison (115 in synth vs 18)
 
 ## JSON/YAML
 ### Pros
@@ -51,8 +51,7 @@
 - if you like it, there are migration paths (Cfn.Include for step by step Migration)
 
 ## References
-- Migration to CDK approaches - https://garbe.io/blog/2019/09/11/hey-cdk-how-to-migrate/
 - Typescript References - https://docs.aws.amazon.com/cdk/api/latest/typescript/api/index.html
-- CloudFormer for generating templates from existing e tities - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cloudformer.html
 - CDK workshop docs - https://cdkworkshop.com/20-typescript.html
 - Example from the workshop - https://github.com/mirceaned/cdk-workshop
+- Migration to CDK approaches - https://garbe.io/blog/2019/09/11/hey-cdk-how-to-migrate/
