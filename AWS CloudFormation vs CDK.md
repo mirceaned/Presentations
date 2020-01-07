@@ -17,7 +17,7 @@
 - imperative
 
 ## Example
-- compare for number of lines
+- number of lines comparison (115 vs 18)
 
 ## JSON/YAML
 ### Pros
@@ -32,13 +32,13 @@
 
 ## CDK
 ### Pros
-- higher level (e.g. for IAM permissions), less lines
+- higher level constructs
 - autocompletion, strong typing, easy jump to docs from IDE
 - you can still synthesize YAML if you want for inspect/compare
 - no more mental switch between code and infrastructure
 - better constructs for reusability - import files
 - logic statements (if, for)
-- is testable
+- testable
 
 ### Cons
 - API for some services is not mature yet so there may be breaking changes - see stability notes in CDK docs
@@ -54,3 +54,5 @@
 - Migration to CDK approaches - https://garbe.io/blog/2019/09/11/hey-cdk-how-to-migrate/
 - Typescript References - https://docs.aws.amazon.com/cdk/api/latest/typescript/api/index.html
 - CloudFormer for generating templates from existing e tities - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-cloudformer.html
+- CDK workshop docs - https://cdkworkshop.com/20-typescript.html
+- Example from the workshop - https://github.com/mirceaned/cdk-workshop
