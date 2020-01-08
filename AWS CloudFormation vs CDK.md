@@ -1,27 +1,32 @@
 ## Intro
 - who used CloudFormation with YAML/JSON?
 - who used CDK?
-
-## CloudFormation 
-- used for AWS cloud deployments
 - infrastructure as code
+    - e.g. deploy some IOT things which save data to s3 buckets 
     - repeatable
-    - trackable via source control 
+    - source control
+    
+## CloudFormation 
+- AWS solution for cloud deployments
 - declarative
 
-## CDK 
+## CDK
 - Cloud Development Kit
 - framework for defining cloud infrastructure and provisioning
+- multiple language support
 - uses constructs
-- suite of tools for synth, diff and deploy
+- suite of tools: synth, diff and deploy
 - imperative
 
 ## Example
 - number of lines comparison (115 in synth vs 18)
+- add one prop to sqs Queue
+- jump to documentation for Queue and constructor params
+- browse API reference
 
-## JSON/YAML
+## CloudFormation
 ### Pros
-- used everywhere, easy to find examples
+- it's been around for a long time, more examples in the wild
 - may be easier to grasp for non programmers
 - low level, finer grain control (can also be a con)
 - there are template builders available which take an entity and generate a template for you, e.g. CloudFormer 
@@ -37,7 +42,7 @@
 - you can still synthesize YAML if you want for inspect/compare
 - no more mental switch between code and infrastructure
 - better constructs for reusability - import files
-- logic statements (if, for)
+- easy to add logic statements
 - testable
 
 ### Cons
@@ -48,10 +53,10 @@
 ## Summary
 - YAML/JSON are basic and lack some advantages that CDK brings
 - CDK is worth a try for any new project
-- if you like it, there are migration paths (Cfn.Include for step by step Migration)
+- if you like it, migration path is incremental (Cfn.Include for step by step Migration)
 
 ## References
-- Typescript References - https://docs.aws.amazon.com/cdk/api/latest/typescript/api/index.html
+- CDK API Reference - https://docs.aws.amazon.com/cdk/api/latest/docs/aws-construct-library.html
 - CDK workshop docs - https://cdkworkshop.com/20-typescript.html
 - Example from the workshop - https://github.com/mirceaned/cdk-workshop
 - Migration to CDK approaches - https://garbe.io/blog/2019/09/11/hey-cdk-how-to-migrate/
