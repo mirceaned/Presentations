@@ -17,7 +17,7 @@
    * merge to master after demo
    * deploy to prod or we were delaying the process for few more days after demo – requires context switch
    * test in production after the merge which sometimes made us miss problems specific to production or non obvious breaking changes when integrating 2 tracks which were fine independently
-* We were breaking some of the Agile guidelines
+* We were breaking some of the Agile guidelines and paid a price
    * stories need to move quickly through the pipeline
    * bugs should be discovered quickly, etc.
 
@@ -42,7 +42,6 @@
 * special cases may still require a feature branch - e.g. changes with financial impact that we want to test with production data
 * we aim for push to master at least once a day, we exercise judgement if end of day and change is not ready
 * in some cases local commit without push - This may be needed in some cases and should be fine as long as we aim for once a day push
-* for single team repos we do control the release cycle, this allows us to QA before deploy to prod
 
 ## Things to consider for continuous integration
 
@@ -50,7 +49,6 @@
     * anything pushed to master of multi team repo is fair game, it can be released at any time by another team – before the QA phase
 * desired frequency of releases - ability to do multiple releases per day is nice
 * small team vs large team
-* need to test risky changes in lab, avoid breaking production
 * There is increased complexity in the code for feature flagging, i.e. this trades the complexity in managing branches with complexity in the code
 * the feature flag approach works well with some types of work (e.g. a new form) but less well with others (bug fixes) 
 * when using feature flags, they need to be left in the code up to the end of the QA stage, and then the flag needs to be tracked for removal
@@ -64,14 +62,14 @@
     * canary testing
     * automated frontend testing?
     * look at each testing step we do in dev testing as a candidate for automation
-    * learn advanced testing techniques - Sean was sharing some techniques he is using, e.g. he developed a fake browser harness for specific types of tests (in his case cookie setting)
 * pair programming becomes a prerequisite for changes that are continuously integrated
     * this helps with immediate code review and audit, ensure chance for bugs is low
 
 ## Conclusion
 
 * give Continuous Integration a try if you are not doing it already
-* retrospect and adjust if this introduces too many problems
+* if you are doing CI, try Continuous Delivery and Continuous Deployment next
+* retrospect and adjust if this introduces problems
 
 ## Learning Resources
 
