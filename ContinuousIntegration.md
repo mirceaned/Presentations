@@ -2,7 +2,7 @@
 
 ## Old state
 
-* Create dev branch -> Push -> Deploy to lab -> Dev test -> QA in lab -> Demo in lab -> Merge to master -> Deploy to prod -> maybe QA in prod? 
+* Create dev branch -> Push to branch -> Deploy to lab -> Dev test -> QA in lab -> Demo in lab -> Merge to master -> Deploy to prod -> maybe QA in prod? 
 
 ## Reasoning
 
@@ -10,6 +10,7 @@
 
 ## Problems
 
+* Merge conflicts
 * The code is deployed from multiple dev branches to lab so engineers were frequently stepping on each other toes
 * It was taking one to several weeks to have a story in a releasable state – demo is once a week
 * Sometimes we forgot to
@@ -17,7 +18,7 @@
    * deploy to prod or we were delaying the process for few more days after demo – requires context switch
    * test in production after the merge which sometimes made us miss problems specific to production or non obvious breaking changes when integrating 2 tracks which were fine independently
 * We were breaking some of the Agile guidelines
-   * stories need to go quickly through the pipeline
+   * stories need to move quickly through the pipeline
    * bugs should be discovered quickly, etc.
 
 ## New State
@@ -28,12 +29,12 @@
 * code that is either tdd-ed or prototyped on a branch is not making it to master
 * part of the testing activity in QA is now done early as dev testing - regression and new functionality
 * we run tests locally
-* code is pushed to master
+* push code to master
 * code was already reviewed during paring
-* code is ready to be deployed on the next deploy cycle - effectively Continuous Delivery
-* the pair thinks about other tests, we use the resources we now allocate to the QA phase to harden our automated tests
-* when the pair thinks testing is sufficient, the feature flag is turned on / code path is activated and pushed
-* there is a later step for QR and demo prep that happens sometimes after prod deploy. It needs to happen early, to minimize impact in case a problem is detected.
+* code is ready to be deployed on the next deploy cycle - Continuous Delivery
+* the pair thinks about other tests, we use the resources we were allocating for QA to harden our automated tests
+* when testing is sufficient, the feature flag is turned on / code path is activated and pushed
+* QA and demo happens sometimes after prod deploy. It needs to happen early, to minimize impact in case a problem is detected.
 
 ## Exceptions
 
@@ -52,7 +53,7 @@
 * need to test risky changes in lab, avoid breaking production
 * There is increased complexity in the code for feature flagging, i.e. this trades the complexity in managing branches with complexity in the code
 * the feature flag approach works well with some types of work (e.g. a new form) but less well with others (bug fixes) 
-* when using feature flags, they need to be left in the code up to the end of the QA/QR stage, and then the flag needs to be tracked for removal
+* when using feature flags, they need to be left in the code up to the end of the QA stage, and then the flag needs to be tracked for removal
 * continuum between the example Martin Fowler gave with integration before release at one end and pushing everything to master every few minutes at the other. We need to see if we are at an optimum spot.
 * The half continuous integration (merging master to the dev branch) is considered sufficient by Martin Fowler, see side note about semi-integration - https://martinfowler.com/articles/continuousIntegration.html
 * develop habit to run build and unit tests before pushing, some tests such as speedyg in main could still fail but that should be infrequent
@@ -69,7 +70,7 @@
 
 ## Conclusion
 
-* give this a try if you are not doing it already
+* give Continuous Integration a try if you are not doing it already
 * retrospect and adjust if this introduces too many problems
 
 ## Learning Resources
@@ -79,7 +80,4 @@
 * https://www.youtube.com/watch?v=NcU0oEk6z8Y - The 10 COMMANDMENTS Of Continuous Integration (CI)
     * Dave Farley talks about steps like running tests, watching the build for failures
 * https://martinfowler.com/articles/continuousIntegration.html
-
-
-
 
