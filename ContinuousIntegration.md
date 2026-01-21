@@ -1,14 +1,11 @@
 # An experiment with more "continuous" integration
 
-## Old state
+## The pain (old state)
 
 * Create dev branch -> Push to branch -> Manual deploy to lab -> Dev test -> QA in lab -> Demo in lab -> Merge to master -> Deploy to prod (later) -> maybe QA in prod? 
+* reasoning: use dev branches to minimize risk, allow enough testing before merging the change to master
 
-## Reasoning
-
-* Use dev branches to minimize risk, allow enough testing before merging the change to master
-
-## Problems
+### Problems
 
 * frequent merge conflicts
 * deploy from multiple branches to lab => engineers stepping on each other toes (hard to detect)
@@ -21,7 +18,7 @@
    * stories need to move quickly through the pipeline
    * bugs should be discovered quickly, etc.
 
-## New State
+## The change (new state)
 
 * Dev Test -> Push to master -> Auto deploy to lab -> QA in lab -> deploy to prod (as part of QA) -> QA in prod -> Demo in prod
 * a pair works on a feature / bug fix
@@ -35,14 +32,14 @@
 * prod deploy
 * QA and demo happens sometimes before, sometimes after prod deploy. Early is better, to minimize impact in case a problem is detected.
 
-## Exceptions
+### Exceptions
 
 * branches are still fine to use, it's feature branches living for multiple days which are not be the default choice
   * special cases for feature branch - e.g. changes with financial impact that we want to test with production data
 * we aim for push to master at least once a day, we exercise judgement if end of day and change is not ready
 * local commits are fine for a short interval
 
-## Things to consider for continuous integration
+### Things to consider for continuous integration
 
 * single team repo or multi teams repo
     * anything pushed to master of a multi team repo is fair game, it can be released at any time by another team – before the QA phase
@@ -64,9 +61,22 @@
 * pair programming becomes important
     * this helps with immediate code reviews, minimizes bugs
 
+## "What if we break production?"
+
+* Unit tests
+* Pair programming for complex changes
+* Code review for solo work
+* Feature flags for instant rollback
+* Canary deployments
+* Real-time monitoring and alerting
+
 ## Conclusion
 
-* we are happy with the new state, we feel more productive and did not notice an increase in problems
+* we are happy with the new state
+  * less manual steps
+  * deployment frequency: weekly -> daily
+  * lead time: 1-2 weeks -> 2-3 days
+  * no noticeable increase in problems
 * give Continuous Integration a try if you are not doing it already
 * if you are doing CI, try Continuous Delivery and Continuous Deployment next, see what works for your situation
 * retrospect and adjust
