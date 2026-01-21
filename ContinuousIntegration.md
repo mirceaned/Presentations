@@ -2,27 +2,28 @@
 
 ## Old state
 
-* Create dev branch -> Push to branch -> Deploy to lab -> Dev test -> QA in lab -> Demo in lab -> Merge to master -> Deploy to prod -> maybe QA in prod? 
+* Create dev branch -> Push to branch -> Manual deploy to lab -> Dev test -> QA in lab -> Demo in lab -> Merge to master -> Deploy to prod (later) -> maybe QA in prod? 
 
 ## Reasoning
 
-* Use dev branches to minimize risk, allow enough testing before merging it to master
+* Use dev branches to minimize risk, allow enough testing before merging the change to master
 
 ## Problems
 
-* merge conflicts
-* deploy from multiple branches to lab => engineers stepping on each other toes
+* frequent merge conflicts
+* deploy from multiple branches to lab => engineers stepping on each other toes (hard to detect)
 * taking one to several weeks to have a story in a releasable state – demo is once a week
 * sometimes we forgot to
    * merge to master after demo
-   * deploy to prod or we were delaying the process for few more days after demo – requires context switch
-   * test in production after the merge - sometimes made us miss problems specific to production or non obvious breaking changes when integrating 2 tracks which were fine independently
+   * deploy to prod after demo or we were waiting for few more days – we lose context
+   * test in production after the merge - sometimes made us miss problems specific to production env or breaking changes when integrating 2 tracks which were fine independently
 * we were breaking some of the Agile guidelines and paid a price
    * stories need to move quickly through the pipeline
    * bugs should be discovered quickly, etc.
 
 ## New State
 
+* Dev Test -> Push to master -> Auto deploy to lab -> QA in lab -> deploy to prod (as part of QA) -> QA in prod -> Demo in prod
 * a pair works on a feature / bug fix
 * discuss whether the change should be pushed directly to master (default) or to a dev branch
 * take necessary precautions to feature flag / shadow deploy the work in progres
@@ -51,7 +52,7 @@
 * the feature flag approach works well with some types of work (e.g. a new form) but less well with others (bug fixes) 
 * when using feature flags, they need to be left in the code up to the end of the QA stage, and then the flag needs to be tracked for removal
 * continuum between the example Martin Fowler gave with integration before release at one end and pushing everything to master every few minutes at the other. Optimum would differ by situation.
-* The half continuous integration (merging master to the dev branch) may be insufficient, see resources for more context
+* the half continuous integration (merging master to the dev branch) may be insufficient, see resources section for more context
 * develop habit to run build and unit tests before pushing
 * builds need to be monitored more closely and as soon as build is broken we need to fix/revert
 * develop skills to feature flag and shadow deploy
@@ -60,15 +61,15 @@
     * canary testing
     * automated frontend testing?
     * look at each testing step we do in dev testing as a candidate for automation
-* pair programming becomes important for changes that are continuously integrated
-    * this helps with immediate code review and audit, ensure chance for bugs is low
+* pair programming becomes important
+    * this helps with immediate code reviews, minimizes bugs
 
 ## Conclusion
 
 * we are happy with the new state, we feel more productive and did not notice an increase in problems
 * give Continuous Integration a try if you are not doing it already
-* if you are doing CI, try Continuous Delivery and Continuous Deployment next
-* retrospect and adjust if this introduces problems
+* if you are doing CI, try Continuous Delivery and Continuous Deployment next, see what works for your situation
+* retrospect and adjust
 
 ## Learning Resources
 
