@@ -1,12 +1,10 @@
----
-marp: true
----
-# An experiment with more "continuous" integration
+## An experiment with more "continuous" integration
 
-## The pain (old state)
+### The pain (old state)
 
 * Create dev branch -> Push to branch -> Manual deploy to lab -> Dev test -> QA in lab -> Demo in lab -> Merge to master -> Deploy to prod (later) -> QA in prod (later)
-* reasoning: use dev branches to minimize risk, allow enough testing before merging the change to master
+
+* why: use dev branches to minimize risk, allow enough testing before merging the change to master
 
 ---
 
