@@ -6,7 +6,17 @@ theme: white
 
 ### The pain (old state)
 
-* Create dev branch -> Push to branch -> Manual deploy to lab -> Dev test -> QA in lab -> Demo in lab -> Merge to master -> Deploy to prod (later) -> QA in prod (later)
+```mermaid
+    graph TD
+    A[Create dev branch] --> B[Push to branch]
+    B --> C[Manual deploy to lab]
+    C --> D[Dev test]
+    D --> E[QA in lab]
+    E --> F[Demo in lab]
+    F --> G[Merge to master]
+    G --> H[Deploy to prod]
+    H --> I[QA in prod]
+```
 
 * why: use dev branches to minimize risk, allow enough testing before merging the change to master
 
