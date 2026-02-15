@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 # An experiment with more "continuous" integration
 
 ## The pain (old state)
