@@ -1,3 +1,7 @@
+---
+theme: white
+---
+
 ## An experiment with more "continuous" integration
 
 ### The pain (old state)
@@ -103,4 +107,5 @@
 * https://www.youtube.com/watch?v=NcU0oEk6z8Y - The 10 COMMANDMENTS Of Continuous Integration (CI)
     * Dave Farley talks about steps like running tests, watching the build for failures
 * https://martinfowler.com/articles/continuousIntegration.html
+
 
