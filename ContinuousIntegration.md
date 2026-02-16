@@ -1,43 +1,6 @@
 ---
-theme: white
+theme: mermaid-white
 size: 16:9
-style: |
-  section {
-    font-size: 28px;
-    justify-content: flex-start;
-    padding: 40px;
-  }
-  h1 {
-    font-size: 2em;
-  }
-  h2 {
-    font-size: 1.8em;
-  }
-  h3 {
-    font-size: 1.5em;
-  }
-  ul, ol {
-    font-size: 0.9em;
-    line-height: 1.4;
-  }
-  .mermaid {
-    transform: scale(1);
-    transform-origin: center;
-  }
-  section.smaller-text {
-    font-size: 20px;
-  }
-  section.smaller-text h3 {
-    font-size: 1.4em;
-    margin-bottom: 0.5em;
-  }
-  section.smaller-text ul {
-    font-size: 0.85em;
-    line-height: 1.3;
-  }
-  section.smaller-text li {
-    margin-bottom: 0.3em;
-  }
 ---
 
 ## From dev branches to "more continuous" integration
@@ -60,7 +23,7 @@ style: |
 
 ### Problems
 
-* engineers stepping on each other toes
+* engineers stepping on each other's toes
 * taking several weeks to have a story in a releasable state
 * stories moving slowly through the pipeline
 * bugs were lingering in the code for weeks 
@@ -105,8 +68,6 @@ style: |
 * local commits are fine for a short interval
 
 ---
-
-<!-- _class: smaller-text -->
 
 ### Things to consider for continuous integration
 

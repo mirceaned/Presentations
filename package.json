@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "marp": "marp ContinuousIntegration.md -w --html --allow-local-files ",
-    "build": "marp ContinuousIntegration.md --html --allow-local-files && ./add-mermaid.sh",
+    "marp": "./watch-marp.sh",
+    "build": "marp ContinuousIntegration.md --html --allow-local-files --theme-set theme.css && ./add-mermaid.sh",
     "add-mermaid": "./add-mermaid.sh"
   },
   "devDependencies": {
