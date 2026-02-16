@@ -27,12 +27,21 @@ perl -i -pe 'BEGIN{undef $/;} s@</body>@<style>
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    margin: 1em 0 !important;
+    margin: 1em auto !important;
   }
 
   .mermaid svg {
     max-width: 100% !important;
+    max-height: 60vh !important;
     height: auto !important;
+    width: auto !important;
+  }
+
+  /* Scale section content to fit */
+  section {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
   }
 
   /* Force center alignment on all text elements */
