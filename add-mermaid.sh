@@ -115,3 +115,8 @@ perl -i -pe 'BEGIN{undef $/;} s@</body>@<style>
 </body>@' "$HTML_FILE"
 
 echo "Mermaid script added to $HTML_FILE"
+
+# Remove fragment attributes so all slide content appears at once
+# instead of requiring a keypress for each bullet point
+perl -i -pe 's/ data-marpit-fragment="\d+"//g; s/ data-marpit-fragments="\d+"//g' "$HTML_FILE"
+echo "Fragment attributes removed from $HTML_FILE"
