@@ -2,12 +2,12 @@
 theme: white
 ---
 
-## An experiment with more "continuous" integration
+## From dev branches to "more continuous" integration
 
-### The pain (old state)
+### The old state
 
 ```mermaid
-    graph TD
+    graph LR
     A[Create dev branch] --> B[Push to branch]
     B --> C[Manual deploy to lab]
     C --> D[Dev test]
@@ -17,8 +17,6 @@ theme: white
     G --> H[Deploy to prod]
     H --> I[QA in prod]
 ```
-
-* why: use dev branches to minimize risk, allow enough testing before merging the change to master
 
 ---
 
@@ -37,9 +35,18 @@ theme: white
 
 ---
 
-## The change (new state)
+### The new state
 
-* Dev Test -> Push to master -> Auto deploy to lab -> QA in lab -> deploy to prod (as part of QA) -> QA in prod -> Demo in prod
+```mermaid
+    graph LR
+    A[Dev Test] --> B[Push to master]
+    B --> C[Auto deploy to lab]
+    C --> D[QA in lab]
+    D --> E[Deploy to prod]
+    E --> F[QA in prod]
+    F --> G[Demo in prod]
+```
+
 * a pair works on a feature / bug fix
 * discuss whether the change should be pushed directly to master (default) or to a dev branch
 * take necessary precautions to feature flag / shadow deploy the work in progres
