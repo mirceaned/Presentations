@@ -35,6 +35,8 @@ size: 16:9
 
 ---
 
+<!-- _class: smaller-text -->
+
 ### The new state
 
 ```mermaid
@@ -68,6 +70,8 @@ size: 16:9
 * local commits are fine for a short interval
 
 ---
+
+<!-- _class: smaller-text -->
 
 ### Things to consider for continuous integration
 

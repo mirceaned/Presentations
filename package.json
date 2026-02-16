@@ -1,7 +1,7 @@
 {
   "scripts": {
     "marp": "./watch-marp.sh",
-    "build": "marp ContinuousIntegration.md --html --allow-local-files --theme-set theme.css && ./add-mermaid.sh",
+    "build": "npx marp ContinuousIntegration.md --html --allow-local-files --theme-set ./theme.css && ./add-mermaid.sh",
     "add-mermaid": "./add-mermaid.sh"
   },
   "devDependencies": {

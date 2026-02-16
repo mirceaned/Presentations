@@ -18,74 +18,8 @@ fi
 # Remove old mermaid script if any
 perl -i -0pe 's/<script type="module">.*?console\.log.*?Mermaid script loading.*?<\/script>//s' "$HTML_FILE"
 
-# Add CSS and mermaid script before </body> tag
-perl -i -pe 'BEGIN{undef $/;} s@</body>@<style>
-  .mermaid {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin: 1em auto !important;
-  }
-
-  .mermaid svg {
-    max-width: 100% !important;
-    max-height: 60vh !important;
-    height: auto !important;
-    width: auto !important;
-  }
-
-  /* Scale section content to fit */
-  section {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-  }
-
-  /* Force center alignment on all text elements */
-  .mermaid text,
-  .mermaid tspan,
-  .mermaid textPath {
-    text-anchor: middle !important;
-  }
-
-  /* Target specific mermaid classes */
-  .mermaid .nodeLabel text,
-  .mermaid .edgeLabel text,
-  .mermaid .label text,
-  .mermaid g.label text {
-    text-anchor: middle !important;
-  }
-
-  /* For foreignObject HTML content */
-  .mermaid foreignObject {
-    overflow: visible !important;
-  }
-
-  .mermaid foreignObject div,
-  .mermaid foreignObject .nodeLabel,
-  .mermaid foreignObject p,
-  .mermaid foreignObject span {
-    text-align: center !important;
-    display: block !important;
-    width: 100% !important;
-  }
-
-  /* Apply to label containers */
-  .mermaid .label,
-  .mermaid .nodeLabel,
-  .mermaid .edgeLabel {
-    text-align: center !important;
-  }
-
-  /* Additional tspan targeting */
-  .mermaid svg g.nodes g.node text tspan {
-    text-anchor: middle !important;
-  }
-</style>
-<script type="module">
+# Add mermaid script before </body> tag (CSS is now in theme.css)
+perl -i -pe 'BEGIN{undef $/;} s@</body>@<script type="module">
   console.log('\''Mermaid script loading...'\'');
 
   import mermaid from '\''https://cdn.jsdelivr.net/npm/mermaid\@10/dist/mermaid.esm.min.mjs'\'';
