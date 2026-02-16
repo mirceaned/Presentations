@@ -71,16 +71,16 @@ theme: white
 ### Things to consider for continuous integration
 
 * single team repo or multi teams repo
-    * anything pushed to master of a multi team repo is fair game, it can be released at any time by another team – before the QA phase
+    * anything pushed to master of a multi-team repo is fair game, it can be released at any time by another team – before the QA phase
 * desired frequency of releases - ability to do multiple releases per day is nice
 * small team vs large team
 * increased code complexity because of feature flagging (trade-off between the complexity in managing branches with complexity in the code)
 * the feature flag approach works well with some types of work (e.g. a new form) but less well with others (bug fixes) 
 * when using feature flags, they need to be left in the code up to the end of the QA stage, and then the flag needs to be tracked for removal
 * continuum between the example Martin Fowler gave with integration before release at one end and pushing everything to master every few minutes at the other. Optimum would differ by situation.
-* the half continuous integration (merging master to the dev branch) may be insufficient, see resources section for more context
-* develop habit to run build and unit tests before pushing
-* builds need to be monitored more closely and as soon as build is broken we need to fix/revert
+* the half-continuous integration (merging master to the dev branch) may be insufficient, see resources section for more context
+* develop the habit to run build and unit tests before pushing
+* builds need to be monitored closely, as soon as the build is broken we need to fix/revert
 * develop skills to feature flag and shadow deploy
 * develop skills to automate more of the testing
     * more integration testing

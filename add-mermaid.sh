@@ -34,6 +34,47 @@ perl -i -pe 'BEGIN{undef $/;} s@</body>@<style>
     max-width: 100% !important;
     height: auto !important;
   }
+
+  /* Force center alignment on all text elements */
+  .mermaid text,
+  .mermaid tspan,
+  .mermaid textPath {
+    text-anchor: middle !important;
+  }
+
+  /* Target specific mermaid classes */
+  .mermaid .nodeLabel text,
+  .mermaid .edgeLabel text,
+  .mermaid .label text,
+  .mermaid g.label text {
+    text-anchor: middle !important;
+  }
+
+  /* For foreignObject HTML content */
+  .mermaid foreignObject {
+    overflow: visible !important;
+  }
+
+  .mermaid foreignObject div,
+  .mermaid foreignObject .nodeLabel,
+  .mermaid foreignObject p,
+  .mermaid foreignObject span {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* Apply to label containers */
+  .mermaid .label,
+  .mermaid .nodeLabel,
+  .mermaid .edgeLabel {
+    text-align: center !important;
+  }
+
+  /* Additional tspan targeting */
+  .mermaid svg g.nodes g.node text tspan {
+    text-anchor: middle !important;
+  }
 </style>
 <script type="module">
   console.log('\''Mermaid script loading...'\'');
@@ -51,9 +92,17 @@ perl -i -pe 'BEGIN{undef $/;} s@</body>@<style>
       securityLevel: '\''loose'\'',
       flowchart: {
         useMaxWidth: true,
-        htmlLabels: true,
-        curve: '\''basis'\''
-      }
+        curve: '\''basis'\'',
+        nodeSpacing: 50,
+        rankSpacing: 50
+      },
+      themeVariables: {
+        primaryTextColor: '\''#000'\'',
+        fontSize: '\''16px'\'',
+        fontFamily: '\''-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'\'',
+        textAlign: '\''center'\''
+      },
+      htmlLabels: false
     });
 
     // Find all code blocks with language-mermaid class
