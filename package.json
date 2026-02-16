@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "marp": "marp ContinuousIntegration.md -w --html --allow-local-files "
+    "marp": "marp ContinuousIntegration.md -w --html --allow-local-files ",
+    "build": "marp ContinuousIntegration.md --html --allow-local-files && ./add-mermaid.sh",
+    "add-mermaid": "./add-mermaid.sh"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.2.3"
