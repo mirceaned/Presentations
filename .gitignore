@@ -1,3 +1,6 @@
 # intellij idea project directories and module files
 **/.idea/
 **/*.iml
+
+# dependencies
+**/node_modules/
