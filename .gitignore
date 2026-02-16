@@ -1,13 +1,3 @@
-# Ignore everything
-*
-# But allow directories so git can recurse
-!*/
-# Allow Markdown files anywhere in the tree
-!**/*.md
-# Keep this .gitignore itself
-!.gitignore
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # intellij idea project directories and module files
 **/.idea/
 **/*.iml
