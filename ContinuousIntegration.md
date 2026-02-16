@@ -22,16 +22,15 @@ theme: white
 
 ### Problems
 
-* frequent merge conflicts
-* deploy from multiple branches to lab => engineers stepping on each other toes (hard to detect)
-* taking one to several weeks to have a story in a releasable state – demo is once a week
+* engineers stepping on each other toes
+* taking several weeks to have a story in a releasable state
+* stories moving slowly through the pipeline
+* bugs were lingering in the code for weeks 
 * sometimes we forgot to
    * merge to master after demo
    * deploy to prod after demo or we were waiting for few more days – we lose context
    * test in production after the merge - sometimes made us miss problems specific to production env or breaking changes when integrating 2 tracks which were fine independently
-* we were breaking some of the Agile guidelines and paid a price
-   * stories need to move quickly through the pipeline
-   * bugs should be discovered quickly, etc.
+* more frequent merge conflicts
 
 ---
 
@@ -47,16 +46,16 @@ theme: white
     F --> G[Demo in prod]
 ```
 
-* a pair works on a feature / bug fix
-* discuss whether the change should be pushed directly to master (default) or to a dev branch
-* take necessary precautions to feature flag / shadow deploy the work in progres
-* part of the testing in QA is now done early as dev testing
-* run tests locally
+* engineer / pair pulls a feature / bug fix
+* decide whether the change should be pushed directly to master (default) or to a dev branch
+* take the necessary precautions to feature flag / shadow deploy
+* build, run tests locally
 * push code to master
-* code is ready to be deployed on the next deploy cycle - Continuous Delivery
-* when testing is sufficient, the feature flag is turned on
+* code ready to be deployed on the next deploy cycle - Continuous Delivery
+* after enough testing, the feature flag is turned on
+* QA
 * prod deploy
-* QA and demo happens sometimes before, sometimes after prod deploy. Early is better, to minimize impact in case a problem is detected.
+* demo in prod
 
 ---
 
@@ -64,7 +63,7 @@ theme: white
 
 * branches are still fine to use, it's feature branches living for multiple days which are not be the default choice
   * special cases for feature branch - e.g. changes with financial impact that we want to test with production data
-* we aim for push to master at least once a day, we exercise judgement if end of day and change is not ready
+* we aim for push to master at least once a day, we exercise judgment if end of day and change is not ready
 * local commits are fine for a short interval
 
 ---
@@ -109,10 +108,10 @@ theme: white
 * we are happy with the new state
   * less manual steps
   * deployment frequency: weekly -> daily
-  * lead time: 1-2 weeks -> 2-3 days
+  * story lead time: 1-2 weeks -> 2-3 days
   * no noticeable increase in problems
 * give Continuous Integration a try if you are not doing it already
-* if you are doing CI, try Continuous Delivery and Continuous Deployment next, see what works for your situation
+* try Continuous Delivery and Continuous Deployment next, find works for your situation
 * retrospect and adjust
 
 ---
