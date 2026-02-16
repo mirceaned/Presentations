@@ -1,0 +1,107 @@
+/* @theme mermaid-white */
+@import 'default';
+
+section {
+  background: white;
+  color: #24292e;
+}
+
+/* Mermaid diagram styles */
+.mermaid {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 1em auto !important;
+}
+
+.mermaid svg {
+  max-width: 100% !important;
+  max-height: 60vh !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+/* Force center alignment on all text elements */
+.mermaid text,
+.mermaid tspan,
+.mermaid textPath {
+  text-anchor: middle !important;
+}
+
+.mermaid .nodeLabel text,
+.mermaid .edgeLabel text,
+.mermaid .label text,
+.mermaid g.label text {
+  text-anchor: middle !important;
+}
+
+.mermaid foreignObject {
+  overflow: visible !important;
+}
+
+.mermaid foreignObject div,
+.mermaid foreignObject .nodeLabel,
+.mermaid foreignObject p,
+.mermaid foreignObject span {
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.mermaid .label,
+.mermaid .nodeLabel,
+.mermaid .edgeLabel {
+  text-align: center !important;
+}
+
+.mermaid svg g.nodes g.node text tspan {
+  text-anchor: middle !important;
+}
+
+section {
+  font-size: 28px;
+  justify-content: flex-start;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+ul, ol {
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+section.smaller-text {
+  font-size: 20px;
+}
+
+section.smaller-text h3 {
+  font-size: 1.25em;
+  margin-bottom: 0.25em;
+}
+
+section.smaller-text ul {
+  font-size: 0.85em;
+  line-height: 1.25;
+}
+
+section.smaller-text li {
+  margin-bottom: 0.2em;
+}
+
+section.smaller-text .mermaid svg {
+  max-height: 40vh !important;
+}
