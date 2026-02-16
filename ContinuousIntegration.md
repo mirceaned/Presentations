@@ -19,23 +19,17 @@ size: 16:9
     H --> I[QA in prod]
 ```
 
----
-
-### Problems
-
 * engineers stepping on each other's toes
 * taking several weeks to have a story in a releasable state
 * stories moving slowly through the pipeline
 * bugs were lingering in the code for weeks 
 * sometimes we forgot to
    * merge to master after demo
-   * deploy to prod after demo or we were waiting for few more days – we lose context
+   * deploy to prod after demo, or we were waiting for few more days – we lose context
    * test in production after the merge - sometimes made us miss problems specific to production env or breaking changes when integrating 2 tracks which were fine independently
 * more frequent merge conflicts
 
 ---
-
-<!-- _class: smaller-text -->
 
 ### The new state
 
@@ -54,8 +48,8 @@ size: 16:9
 * take the necessary precautions to feature flag / shadow deploy
 * build, run tests locally
 * push code to master
-* code ready to be deployed on the next deploy cycle - Continuous Delivery
-* after enough testing, the feature flag is turned on
+* code ready to be deployed on the next deployment cycle - Continuous Delivery
+* after testing, the feature flag is turned on
 * QA
 * prod deploy
 * demo in prod
@@ -64,9 +58,9 @@ size: 16:9
 
 ### Exceptions
 
-* branches are still fine to use, it's feature branches living for multiple days which are not be the default choice
+* branches are still fine to use ocasionally, it's feature branches living for multiple days which are not recommended
   * special cases for feature branch - e.g. changes with financial impact that we want to test with production data
-* we aim for push to master at least once a day, we exercise judgment if end of day and change is not ready
+* we aim to push to master at least once a day, we exercise judgment if it's end of day and change is not ready
 * local commits are fine for a short interval
 
 ---
@@ -77,23 +71,21 @@ size: 16:9
 
 * single team repo or multi teams repo
     * anything pushed to master of a multi-team repo is fair game, it can be released at any time by another team – before the QA phase
-* desired frequency of releases - ability to do multiple releases per day is nice
 * small team vs large team
 * increased code complexity because of feature flagging (trade-off between the complexity in managing branches with complexity in the code)
 * the feature flag approach works well with some types of work (e.g. a new form) but less well with others (bug fixes) 
-* when using feature flags, they need to be left in the code up to the end of the QA stage, and then the flag needs to be tracked for removal
-* continuum between the example Martin Fowler gave with integration before release at one end and pushing everything to master every few minutes at the other. Optimum would differ by situation.
-* the half-continuous integration (merging master to the dev branch) may be insufficient, see resources section for more context
-* develop the habit to run build and unit tests before pushing
+* when using feature flags, they need to be tracked for removal
+* one end of continuum - integration every 6 months, the other end -  pushing everything to master every few minutes. Optimum would differ by situation.
+* the half-continuous integration (merging master to the dev branch) may be insufficient
+* develop the habit to run build and unit tests before pushing so you don't break the build
 * builds need to be monitored closely, as soon as the build is broken we need to fix/revert
 * develop skills to feature flag and shadow deploy
 * develop skills to automate more of the testing
-    * more integration testing
+    * integration testing
     * canary testing
     * automated frontend testing?
-    * look at each testing step we do in dev testing as a candidate for automation
-* pair programming becomes important
-    * this helps with immediate code reviews, minimizes bugs
+* pair programming becomes an important part of the process
+    * immediate code reviews, minimizes bugs
 
 ---
 
@@ -116,7 +108,7 @@ size: 16:9
   * story lead time: 1-2 weeks -> 2-3 days
   * no noticeable increase in problems
 * give Continuous Integration a try if you are not doing it already
-* try Continuous Delivery and Continuous Deployment next, find works for your situation
+* try Continuous Delivery and Continuous Deployment next, find what works for your situation
 * retrospect and adjust
 
 ---

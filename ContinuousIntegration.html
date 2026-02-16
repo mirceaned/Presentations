@@ -21,9 +21,6 @@
     G --&gt; H[Deploy to prod]
     H --&gt; I[QA in prod]
 </code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
-<h3 id="problems">Problems</h3>
 <ul>
 <li>engineers stepping on each other's toes</li>
 <li>taking several weeks to have a story in a releasable state</li>
@@ -32,14 +29,14 @@
 <li>sometimes we forgot to
 <ul>
 <li>merge to master after demo</li>
-<li>deploy to prod after demo or we were waiting for few more days – we lose context</li>
+<li>deploy to prod after demo, or we were waiting for few more days – we lose context</li>
 <li>test in production after the merge - sometimes made us miss problems specific to production env or breaking changes when integrating 2 tracks which were fine independently</li>
 </ul>
 </li>
 <li>more frequent merge conflicts</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-class="smaller-text" data-theme="mermaid-white" lang="C" class="smaller-text" style="--class:smaller-text;--theme:mermaid-white;" data-size="16:9">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
 <h3 id="the-new-state">The new state</h3>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-mermaid">    graph LR
     A[Dev Test] --&gt; B[Push to master]
@@ -55,26 +52,26 @@
 <li>take the necessary precautions to feature flag / shadow deploy</li>
 <li>build, run tests locally</li>
 <li>push code to master</li>
-<li>code ready to be deployed on the next deploy cycle - Continuous Delivery</li>
-<li>after enough testing, the feature flag is turned on</li>
+<li>code ready to be deployed on the next deployment cycle - Continuous Delivery</li>
+<li>after testing, the feature flag is turned on</li>
 <li>QA</li>
 <li>prod deploy</li>
 <li>demo in prod</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
 <h3 id="exceptions">Exceptions</h3>
 <ul>
-<li>branches are still fine to use, it's feature branches living for multiple days which are not be the default choice
+<li>branches are still fine to use ocasionally, it's feature branches living for multiple days which are not recommended
 <ul>
 <li>special cases for feature branch - e.g. changes with financial impact that we want to test with production data</li>
 </ul>
 </li>
-<li>we aim for push to master at least once a day, we exercise judgment if end of day and change is not ready</li>
+<li>we aim to push to master at least once a day, we exercise judgment if it's end of day and change is not ready</li>
 <li>local commits are fine for a short interval</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="smaller-text" data-theme="mermaid-white" lang="C" class="smaller-text" style="--class:smaller-text;--theme:mermaid-white;" data-size="16:9">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="smaller-text" data-theme="mermaid-white" lang="C" class="smaller-text" style="--class:smaller-text;--theme:mermaid-white;" data-size="16:9">
 <h3 id="things-to-consider-for-continuous-integration">Things to consider for continuous integration</h3>
 <ul>
 <li>single team repo or multi teams repo
@@ -82,32 +79,30 @@
 <li>anything pushed to master of a multi-team repo is fair game, it can be released at any time by another team – before the QA phase</li>
 </ul>
 </li>
-<li>desired frequency of releases - ability to do multiple releases per day is nice</li>
 <li>small team vs large team</li>
 <li>increased code complexity because of feature flagging (trade-off between the complexity in managing branches with complexity in the code)</li>
 <li>the feature flag approach works well with some types of work (e.g. a new form) but less well with others (bug fixes)</li>
-<li>when using feature flags, they need to be left in the code up to the end of the QA stage, and then the flag needs to be tracked for removal</li>
-<li>continuum between the example Martin Fowler gave with integration before release at one end and pushing everything to master every few minutes at the other. Optimum would differ by situation.</li>
-<li>the half-continuous integration (merging master to the dev branch) may be insufficient, see resources section for more context</li>
-<li>develop the habit to run build and unit tests before pushing</li>
+<li>when using feature flags, they need to be tracked for removal</li>
+<li>one end of continuum - integration every 6 months, the other end -  pushing everything to master every few minutes. Optimum would differ by situation.</li>
+<li>the half-continuous integration (merging master to the dev branch) may be insufficient</li>
+<li>develop the habit to run build and unit tests before pushing so you don't break the build</li>
 <li>builds need to be monitored closely, as soon as the build is broken we need to fix/revert</li>
 <li>develop skills to feature flag and shadow deploy</li>
 <li>develop skills to automate more of the testing
 <ul>
-<li>more integration testing</li>
+<li>integration testing</li>
 <li>canary testing</li>
 <li>automated frontend testing?</li>
-<li>look at each testing step we do in dev testing as a candidate for automation</li>
 </ul>
 </li>
-<li>pair programming becomes important
+<li>pair programming becomes an important part of the process
 <ul>
-<li>this helps with immediate code reviews, minimizes bugs</li>
+<li>immediate code reviews, minimizes bugs</li>
 </ul>
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
 <h2 id="what-if-we-break-production">&quot;What if we break production?&quot;</h2>
 <ul>
 <li>Unit tests</li>
@@ -118,7 +113,7 @@
 <li>Real-time monitoring and alerting</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
 <h2 id="conclusion">Conclusion</h2>
 <ul>
 <li>we are happy with the new state
@@ -130,11 +125,11 @@
 </ul>
 </li>
 <li>give Continuous Integration a try if you are not doing it already</li>
-<li>try Continuous Delivery and Continuous Deployment next, find works for your situation</li>
+<li>try Continuous Delivery and Continuous Deployment next, find what works for your situation</li>
 <li>retrospect and adjust</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
 <h2 id="learning-resources">Learning Resources</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=v4Ijkq6Myfc">https://www.youtube.com/watch?v=v4Ijkq6Myfc</a> - Continuous Integration vs Feature Branch Workflow
