@@ -23,9 +23,9 @@
 </code></pre>
 <ul>
 <li>engineers stepping on each other's toes</li>
-<li>taking several weeks to have a story in a releasable state</li>
-<li>stories moving slowly through the pipeline</li>
-<li>bugs were lingering in the code for weeks</li>
+<li>it takes several weeks to have a story in a releasable state</li>
+<li>stories move slowly through the pipeline</li>
+<li>bugs are lingering in the code for weeks</li>
 <li>sometimes we forgot to
 <ul>
 <li>merge to master after demo</li>
@@ -46,6 +46,7 @@
     E --&gt; F[QA in prod]
     F --&gt; G[Demo in prod]
 </code></pre>
+<p>Continuous integration (CI) - the practice of integrating source code changes frequently.</p>
 <ul>
 <li>engineer / pair pulls a feature / bug fix</li>
 <li>decide whether the change should be pushed directly to master (default) or to a dev branch</li>
@@ -54,9 +55,6 @@
 <li>push code to master</li>
 <li>code ready to be deployed on the next deployment cycle - Continuous Delivery</li>
 <li>after testing, the feature flag is turned on</li>
-<li>QA</li>
-<li>prod deploy</li>
-<li>demo in prod</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-theme="mermaid-white" lang="C" style="--theme:mermaid-white;" data-size="16:9">
@@ -76,18 +74,17 @@
 <ul>
 <li>single team repo or multi teams repo
 <ul>
-<li>anything pushed to master of a multi-team repo is fair game, it can be released at any time by another team – before the QA phase</li>
+<li>anything pushed to master of a multi-team repo is fair game, it can be released at any time by another team – before the QA phase happens</li>
 </ul>
 </li>
 <li>small team vs large team</li>
-<li>increased code complexity because of feature flagging (trade-off between the complexity in managing branches with complexity in the code)</li>
-<li>the feature flag approach works well with some types of work (e.g. a new form) but less well with others (bug fixes)</li>
+<li>some code complexity because of feature flagging (trade-off between the complexity in managing branches with complexity in the code)</li>
+<li>the feature flag approach works well with some types of work (e.g. a new page) but less with others (bug fixes)</li>
 <li>when using feature flags, they need to be tracked for removal</li>
 <li>one end of continuum - integration every 6 months, the other end -  pushing everything to master every few minutes. Optimum would differ by situation.</li>
-<li>the half-continuous integration (merging master to the dev branch) may be insufficient</li>
+<li>the half-continuous integration (merging master to the dev branch) seems insufficient</li>
 <li>develop the habit to run build and unit tests before pushing so you don't break the build</li>
 <li>builds need to be monitored closely, as soon as the build is broken we need to fix/revert</li>
-<li>develop skills to feature flag and shadow deploy</li>
 <li>develop skills to automate more of the testing
 <ul>
 <li>integration testing</li>
@@ -95,7 +92,7 @@
 <li>automated frontend testing?</li>
 </ul>
 </li>
-<li>pair programming becomes an important part of the process
+<li>pair programming becomes important
 <ul>
 <li>immediate code reviews, minimizes bugs</li>
 </ul>

@@ -20,9 +20,9 @@ size: 16:9
 ```
 
 * engineers stepping on each other's toes
-* taking several weeks to have a story in a releasable state
-* stories moving slowly through the pipeline
-* bugs were lingering in the code for weeks 
+* it takes several weeks to have a story in a releasable state
+* stories move slowly through the pipeline
+* bugs are lingering in the code for weeks 
 * sometimes we forgot to
    * merge to master after demo
    * deploy to prod after demo, or we were waiting for few more days – we lose context
@@ -42,6 +42,7 @@ size: 16:9
     E --> F[QA in prod]
     F --> G[Demo in prod]
 ```
+Continuous integration (CI) - the practice of integrating source code changes frequently.
 
 * engineer / pair pulls a feature / bug fix
 * decide whether the change should be pushed directly to master (default) or to a dev branch
@@ -50,9 +51,6 @@ size: 16:9
 * push code to master
 * code ready to be deployed on the next deployment cycle - Continuous Delivery
 * after testing, the feature flag is turned on
-* QA
-* prod deploy
-* demo in prod
 
 ---
 
@@ -70,21 +68,20 @@ size: 16:9
 ### Things to consider for continuous integration
 
 * single team repo or multi teams repo
-    * anything pushed to master of a multi-team repo is fair game, it can be released at any time by another team – before the QA phase
+    * anything pushed to master of a multi-team repo is fair game, it can be released at any time by another team – before the QA phase happens
 * small team vs large team
-* increased code complexity because of feature flagging (trade-off between the complexity in managing branches with complexity in the code)
-* the feature flag approach works well with some types of work (e.g. a new form) but less well with others (bug fixes) 
+* some code complexity because of feature flagging (trade-off between the complexity in managing branches with complexity in the code)
+* the feature flag approach works well with some types of work (e.g. a new page) but less with others (bug fixes) 
 * when using feature flags, they need to be tracked for removal
 * one end of continuum - integration every 6 months, the other end -  pushing everything to master every few minutes. Optimum would differ by situation.
-* the half-continuous integration (merging master to the dev branch) may be insufficient
+* the half-continuous integration (merging master to the dev branch) seems insufficient
 * develop the habit to run build and unit tests before pushing so you don't break the build
 * builds need to be monitored closely, as soon as the build is broken we need to fix/revert
-* develop skills to feature flag and shadow deploy
 * develop skills to automate more of the testing
     * integration testing
     * canary testing
     * automated frontend testing?
-* pair programming becomes an important part of the process
+* pair programming becomes important
     * immediate code reviews, minimizes bugs
 
 ---
