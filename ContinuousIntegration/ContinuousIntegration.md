@@ -6,7 +6,7 @@ size: 16:9
 ### From dev branches to "more continuous" integration
 
 ```mermaid
-%%{init: {'gitGraph': {'rotateCommitLabel': false, 'showCommitLabel': false}, 'themeVariables': {'fontSize': '11px'}}}%%
+%%{init: {'gitGraph': {'rotateCommitLabel': false, 'showCommitLabel': false, 'showBranches': false}, 'themeVariables': {'fontSize': '11px'}}}%%
 gitGraph
    commit id: "initial"
    branch dev-feature-a
