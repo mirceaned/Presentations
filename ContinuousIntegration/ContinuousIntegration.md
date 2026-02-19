@@ -81,10 +81,9 @@ Continuous integration (CI) - the practice of integrating source code changes fr
 
 ### Exceptions
 
-* branches are still fine to use ocasionally, it's feature branches living for multiple days which are not recommended
+* branches are still fine to use occasionally; it's feature branches living for multiple days which we are avoiding
   * special cases for feature branch - e.g. changes with financial impact that we want to test with production data
 * we aim to push to master at least once a day, we exercise judgment if it's end of day and change is not ready
-* local commits are fine for a short interval
 
 ---
 
@@ -96,16 +95,12 @@ Continuous integration (CI) - the practice of integrating source code changes fr
     * anything pushed to master of a multi-team repo is fair game, it can be released at any time by another team – before the QA phase happens
 * small team vs large team
 * some code complexity because of feature flagging (trade-off between the complexity in managing branches with complexity in the code)
-* the feature flag approach works well with some types of work (e.g. a new page) but less with others (bug fixes) 
+* the feature flags work well with some types of work (e.g. a new page) but less with others (bug fixes) 
 * when using feature flags, they need to be tracked for removal
-* one end of continuum - integration every 6 months, the other end -  pushing everything to master every few minutes. Optimum would differ by situation.
-* the half-continuous integration (merging master to the dev branch) seems insufficient
+* one end of continuum - integration every 6 months, the other end - pushing everything to master every few minutes. Optimum would differ by situation.
+* the half-continuous integration (merging master to the dev branch) seems not enough
 * develop the habit to run build and unit tests before pushing so you don't break the build
 * builds need to be monitored closely, as soon as the build is broken we need to fix/revert
-* develop skills to automate more of the testing
-    * integration testing
-    * canary testing
-    * automated frontend testing?
 * pair programming becomes important
     * immediate code reviews, minimizes bugs
 
