@@ -3,7 +3,32 @@ theme: mermaid-white
 size: 16:9
 ---
 
-## From dev branches to "more continuous" integration
+### From dev branches to "more continuous" integration
+
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false, 'showCommitLabel': false}, 'themeVariables': {'fontSize': '11px'}}}%%
+gitGraph
+   commit id: "initial"
+   branch dev-feature-a
+   branch dev-feature-b
+   checkout dev-feature-a
+   commit id: "feat-a v1"
+   commit id: "feat-a v2"
+   checkout dev-feature-b
+   commit id: "feat-b v1"
+   commit id: "feat-b v2"
+   checkout main
+   merge dev-feature-a id: "merge A"
+   branch dev-feature-c
+   commit id: "feat-c v1"
+   commit id: "feat-c v2"
+   checkout main
+   merge dev-feature-b id: "merge B"
+   merge dev-feature-c id: "merge C"
+   commit id: "release"
+```
+
+---
 
 ### The old state
 
@@ -104,8 +129,8 @@ Continuous integration (CI) - the practice of integrating source code changes fr
   * deployment frequency: weekly -> daily
   * story lead time: 1-2 weeks -> 2-3 days
   * no noticeable increase in problems
-* give Continuous Integration a try if you are not doing it already
-* try Continuous Delivery and Continuous Deployment next, find what works for your situation
+* give Continuous Integration a try
+* next try Continuous Delivery and Continuous Deployment, find what works for your situation
 * retrospect and adjust
 
 ---
