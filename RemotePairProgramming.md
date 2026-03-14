@@ -26,7 +26,7 @@
 
 ## Which tools?
 
-- Mob timer - https://jahed.github.io/agility/
+- Mob timer: https://jahed.github.io/agility/
 
 - Audio
   - external directional microphone - I use Blue Yeti Nano
