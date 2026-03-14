@@ -10,7 +10,8 @@
 
 - great for onboarding a new employee
 - great for training (seniors mentoring juniors, experts can spread the knowledge)
-- better problem definition, better solutions, easy to maintain discipline for things like TDD, better code / less bugs, continuous code reviews, and others 
+- better problem definition, better solutions, easy to maintain discipline for things like TDD, better code / less bugs, continuous code reviews, and others
+- we mix with solo work when pairing does not make sense: prototyping, figuring out things from documentation, partner is out
 
 ## How?
 
@@ -23,6 +24,15 @@
 - we do retrospectives to see what works and what needs to change
 
 ## Patterns we prefer
+
+- Driver as "smart keyboard" (our default)
+	- Similar to driver/navigator, but navigator is guiding the driver to a solution, they have a stronger influence while they are navigating 
+	- Navigator isn't necessarily dictating exactly what to do as far as keystrokes, but rather gives guidance on logic
+    - switch based on timer, usually 10 minutes
+    - take breaks every hour 
+	- Pros
+		- Good for teaching
+		- Both partners are actively participanting
 
 - Ping/Pong
 	- Each partner takes turn in the red/gree/refactor cycle
@@ -41,19 +51,12 @@
 		- Could be a bit unbalanced in terms of time
 		- Doesn't work well for prototyping
 		- Need to be on the same page up front
-
-- Driver as "smart keyboard"
-	- Similar to driver/navigator, but navigator is guiding the driver to a solution, they have a stronger influence while they are navigating 
-	- Navigator isn't necessarily dictating exactly what to do as far as keystrokes, but rather gives guidance on logic
-	- Pros
-		- Good for teaching
-		- Both partners are actively participanting
 	
 ## Which tools?
 
-- People that work well together
+- Find people that work well together
 
-- Mob timer: https://jahed.github.io/agility/
+- Use a timer, e.g. https://jahed.github.io/agility/
 
 - Audio
   - external directional microphone - I use Blue Yeti Nano
