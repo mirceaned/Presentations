@@ -24,32 +24,34 @@
 
 ## Patterns we prefer
 
-* Ping/Pong
-	* The pair member take turn in the red/gree/refactor cycle
-	* Both members of the pair are actively participating/talking
-		* P1 test (red)
-		* P2 implementation (green)
-		* P1 refactor (optional?)
-		* P2 test (red)
-	* Pros
-		* Both members of the pair are actively participating/talking
-		* Quick rotation built in
-		* Encourages switching at a given time instead of arbitrarily
-			* That switch happens at a good time as well
-		* Need to be on the same page up front
-	* Cons
-		* Could be a bit unbalanced in terms of time
-		* Doesn't work well for prototyping
-		* Need to be on the same page up front
+- Ping/Pong
+	- Each partner takes turn in the red/gree/refactor cycle
+	- Both members of the pair are actively participating/talking
+		- P1 test (red)
+		- P2 implementation (green)
+		- P1 refactor (optional)
+		- P2 test (red)
+	- Pros
+	  	- Both members of the pair are actively participating/talking
+		- Quick rotation built in
+		- Encourages switching at a given time instead of arbitrarily
+			- That switch happens at a good time as well
+		- Need to be on the same page up front
+	- Cons
+		- Could be a bit unbalanced in terms of time
+		- Doesn't work well for prototyping
+		- Need to be on the same page up front
 
-* Driver as "smart keyboard"
-	* Similar to driver/navigator, but navigator is guiding the driver to a solution
-	* Navigator isn't necessarily dictating exactly what to do as far as keystrokes, but rather gives guidance on logic
-	* Pros
-		* Good for teaching
-		* Both partners are actively participanting
+- Driver as "smart keyboard"
+	- Similar to driver/navigator, but navigator is guiding the driver to a solution, they have a stronger influence while they are navigating 
+	- Navigator isn't necessarily dictating exactly what to do as far as keystrokes, but rather gives guidance on logic
+	- Pros
+		- Good for teaching
+		- Both partners are actively participanting
 	
 ## Which tools?
+
+- People that work well together
 
 - Mob timer: https://jahed.github.io/agility/
 
@@ -58,7 +60,7 @@
   - I prefer speakers instead of headset
   
 - Screen sharing and control
-  - evaluated multiple tools: Zoom, Tuple, Slack, TeamViewer, MS Teams, Pop, Idea Code with Me
+  - we evaluated multiple tools: Zoom, Tuple, Slack, TeamViewer, MS Teams, Pop, Idea Code with Me
   - Tuple followed by Zoom seems the better solution for remote pairing, but it's not perfect
   - pay attention to
     - seamless experience of taking over and controlling the screen
