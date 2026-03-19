@@ -76,6 +76,6 @@
     - keyboard shortcuts need to work
 
 ## References
-- Practical Remote Pair Programming - https://www.amazon.com/Practical-Remote-Pair-Programming-collaborating/dp/1800561369
-- Example - https://vimeo.com/7814261
-- Mob programming - https://www.youtube.com/watch?v=SHOVVnRB4h0
+- Practical Remote Pair Programming book - https://www.amazon.com/Practical-Remote-Pair-Programming-collaborating/dp/1800561369
+- Example pairing session - https://vimeo.com/7814261
+- Mob programming presentation - https://www.youtube.com/watch?v=SHOVVnRB4h0
