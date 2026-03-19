@@ -11,7 +11,9 @@
 - great for onboarding a new team member
 - great for training (seniors mentoring juniors, experts spread the knowledge)
 - better problem definition, better solutions, easy to maintain discipline for things like TDD, better code / less bugs, continuous code reviews
+- fewer detours, less tunnel vision
 - we mix with solo work when pairing does not make sense: prototyping, figuring out things from documentation, partner is out
+- we get to go on vacation!
 
 ## How?
 
